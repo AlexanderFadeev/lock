@@ -21,7 +21,7 @@ func NewValue(v interface{}) Value {
 }
 
 func (v *value) Lock() LockedValue {
-	v.Lock()
+	v.mutex.Lock()
 	return &lockedValue{v}
 }
 
